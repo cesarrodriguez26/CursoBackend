@@ -7,13 +7,26 @@
 }*/
 
 
-import {promises as fs} from 'fs'
-import { get } from 'https'
+//import {promises as fs} from 'fs'
+import http from 'http'
 
 
-const path ='./productos.json'
+const  PORT = 4000
 
-const getProducts = async () => {
+const server = http.createServer((req, res) => {
+    res.end ("Hola buenos dias")
+
+})
+
+server.listen(PORT, () => {
+    console.log(`server on port ${PORT}`)
+})
+
+
+
+//*const path ='./productos.json'
+
+/*const getProducts = async () => {
     const prods = JSON.parse (await fs.readFile(path, 'utf-8'))
     console.log(prods)
 }
@@ -90,4 +103,4 @@ deleteProduct(2)
 //getProductsById(1)
 
 
-//getProducts()
+//getProducts()*/
